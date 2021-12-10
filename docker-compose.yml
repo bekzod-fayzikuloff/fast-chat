@@ -1,0 +1,31 @@
+version: '3.3'
+
+services:
+  web:
+    build: .
+    command: uvicorn src.backend.app:app --reload --host 0.0.0.0
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+  db:
+    image: postgres:13-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=fast_chat
+
+  # redis:
+  #   image: redis
+
+  # queue:
+  #   image: rabbitmq
+
+volumes:
+    postgres_data:

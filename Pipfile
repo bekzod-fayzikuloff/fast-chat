@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "~=0.70.0"
+uvicorn = "~=0.15.0"
+python-dotenv = "~=0.19.2"
+pydantic = "~=1.8.2"
+passlib = {version = "~=1.7.4", extras = ["bcrypt"]}
+python-multipart = "*"
+python-jose = "*"
+bcrypt = "*"
+SQLAlchemy = "~=1.4.27"
+mypy = "*"
+psycopg2 = "*"
+psycopg2-binary = "*"
+
+[dev-packages]
+black = "*"
+flake8 = "*"
+
+[requires]
+python_version = "3.6"

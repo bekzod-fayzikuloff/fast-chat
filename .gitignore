@@ -1,0 +1,5 @@
+.mypy_cache
+.env
+database.sqlite3
+.idea
+*__pycache__/
